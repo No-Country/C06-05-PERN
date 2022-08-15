@@ -16,7 +16,7 @@ try {
   sequelize.authenticate();
   console.log('Conexion exitosa a la base de datos');
 } catch (error) {
-  console.error('Unable to connect to the database:', error);
+  console.error('no es posible conectarse a la base de datos:', error);
 }
 const basename = path.basename(__filename);
 

@@ -10,9 +10,15 @@ conn.sync({ force: true }).then(async () => {
   server.get('/', async (request, response) => {
     return response.status(200).send({ message: `Welcome` })
   })
+  try {
+    server.listen(PORT, () => {
+      console.log('servidor conectado ' + PORT); // eslint-disable-line no-console
+    });
+  } catch (error) {
+    server.listen(PORT, () => {
+      console.log('Imposible conectarse ' + error)
+    });
+  }
 
-  server.listen(PORT, () => {
-    console.log('servidor conectado ' + PORT); // eslint-disable-line no-console
-  });
 
 });
