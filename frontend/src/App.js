@@ -1,11 +1,14 @@
+import { Fragment } from 'react';
 import './App.css';
-
+import Navbar from './screens/generales/Navbar'
+import ItemDetail from './screens/ItemDetail.jsx'
 function App() {
   return (
-    <div className="App">
-      <h1>Hola</h1>
-    </div>
-  );
+    <Fragment>
+      <Navbar />
+      <ItemDetail/>
+    </Fragment>
+  )
 }
 
 export default App;
