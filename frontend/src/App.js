@@ -6,6 +6,7 @@ import Home from './screens/Home';
 import Footer from './screens/generales/Footer.jsx'
 import { Route, Routes } from 'react-router-dom';
 import Products from './screens/generales/ProductCard'
+import ItemDetail2 from './screens/ItemDetail2';
 
 const Mensaje = (Element)=> <h1>Catálogo de remeras</h1>
 
@@ -14,10 +15,11 @@ function App() {
    
        <Fragment>
           <Navbar/>
-            <Routes>
+            {/* <Routes>
               <Route path ='/' element={ <Home/>}/>
               <Route path ='/remeras' element={  <Products/>} />
-            </Routes>
+            </Routes> */}
+            <ItemDetail2/>
           <Footer/>
         </Fragment>
 
