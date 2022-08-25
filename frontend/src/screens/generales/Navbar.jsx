@@ -4,8 +4,8 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
-  { name: 'Accesorios', href: '#', current: true },
-  { name: 'Remeras', href: '#', current: false },
+  { name: 'Home', href: '/', current: true },
+  { name: 'Remeras', href: '/remeras', current: false },
   { name: 'Pantalones', href: '#', current: false },
   { name: 'Colección 2022', href: '#', current: false },
   { name: '¿Cómo Comprar? ', href:'#', current: false}

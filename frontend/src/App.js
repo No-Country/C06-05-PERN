@@ -15,11 +15,11 @@ function App() {
    
        <Fragment>
           <Navbar/>
-            {/* <Routes>
+            <Routes>
               <Route path ='/' element={ <Home/>}/>
-              <Route path ='/remeras' element={  <Products/>} />
-            </Routes> */}
-            <ItemDetail2/>
+              <Route path ='/remeras' element={  <ItemDetail2/>} />
+            </Routes>
+           <ItemDetail></ItemDetail>
           <Footer/>
         </Fragment>
 
