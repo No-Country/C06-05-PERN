@@ -71,7 +71,7 @@ export default function ItemDetail2() {
   const [selectedSize, setSelectedSize] = useState(product.sizes[2])
 
   return (
-        <div class = "bg-slate-400 py-20">
+        <div class = "bg-slate-400 py-20 ">
            <div class="bg-white mx-auto px-20  rounded-2xl  max-w-[1407px] h-[879px] flex justify-between items-center box-border  ">
 
             {/* text */}

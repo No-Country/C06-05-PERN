@@ -17,9 +17,9 @@ function App() {
           <Navbar/>
             <Routes>
               <Route path ='/' element={ <Home/>}/>
-              <Route path ='/remeras' element={  <ItemDetail2/>} />
+              <Route path ='/remeras' element={ <ItemDetail2/>} />
             </Routes>
-           <ItemDetail></ItemDetail>
+           
           <Footer/>
         </Fragment>
 
