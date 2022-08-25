@@ -1,6 +1,6 @@
 
 const userRouter = require("./index")
-const { models } = require('../database');
+const { usuarios } = require('../database');
 
 const UserService = require('../servicios/usuariosServicios');
 
@@ -14,8 +14,8 @@ userRouter.post('/usuarios',
 
         try {
             const body = req.body;
-            const newCategory = await service.create(body);
-            res.status(201).json(newCategory);
+            const createUsuarioSchema = await usuarios.create(body);
+            res.status(201).json(createUsuarioSchema);
         } catch (error) {
             next(error);
         }
