@@ -1,17 +1,43 @@
-const usuario = require("../models/usuarios")
+const usuarios = require("../models/usuarios")
 
-const Joi = require('joi');
+const USUARIOSTOTALES = {
 
-const id = Joi.number().integer();
-const nombre = Joi.string();
-const apellido = Joi.string()
-const email = Joi.string().email();
-const contra = Joi.string().min(3);
-const createUsuarioSchema = ({
-    name: nombre,
-    apellido: apellido,
-    email: email,
-    contra: contra
-});
+    getUsuario: async (req, res) => {
 
-module.exports = createUsuarioSchema
+        try {
+            const TODOSLOSUSUARIOS = await productos.findAll()
+            res.json(TODOSLOSUSUARIOS)
+        } catch (error) {
+            return res.json({ message: error.message })
+        }
+
+    },
+
+    crearUsuario: async (req, res) => {
+
+
+        try {
+            const {
+                nombre,
+                apellido,
+                email,
+                contra
+            } = req.body
+            const nuevoUsuario = await productos.create({
+                nombre,
+                apellido,
+                email,
+                contra
+            })
+            res.json(nuevoUsuario)
+
+
+
+        } catch (error) {
+            return res.json({ message: error.message })
+        }
+
+    }
+}
+
+module.exports = USUARIOSTOTALES

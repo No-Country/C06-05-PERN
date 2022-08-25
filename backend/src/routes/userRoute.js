@@ -1,26 +1,19 @@
 
-const userRouter = require("./index")
-const { usuarios } = require('../database');
+const userRouter = require("./ProductRoutes")
+const USUARIOSTOTALES = require("../controladores/Usuarios")
+const { getUsuario, crearUsuario } = USUARIOSTOTALES
 
-const UserService = require('../servicios/usuariosServicios');
 
-const { createUsuarioSchema } = require('../controladores/Usuarios');
 
-const service = new UserService();
+userRouter.route("/usuarios")
+    .get(getUsuario)
+    .post(crearUsuario)
 
-userRouter.post('/usuarios',
+userRouter.route("/usuario/id")
+    .get()
+    .put()
+    .delete()
 
-    async (req, res, next) => {
-
-        try {
-            const body = req.body;
-            const createUsuarioSchema = await usuarios.create(body);
-            res.status(201).json(createUsuarioSchema);
-        } catch (error) {
-            next(error);
-        }
-    }
-);
 
 
 
