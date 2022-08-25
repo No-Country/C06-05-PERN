@@ -19,7 +19,14 @@ const pedidos =
         }
     });
 
-pedidos.
+pedidos.hasOne(compras, {
+    foreignKey: "id_pedido",
+    sourceKey: "id_pedido"
+})
 
+compras.belongsTo(pedidos, {
+    foreignKey: "id_pedido",
+    sourceKey: "id_pedido"
+})
 
-    module.exports = pedidos
+module.exports = pedidos

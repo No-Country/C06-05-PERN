@@ -24,7 +24,7 @@ const pers = require("./Model/personas")
 
 
 
-pers.sync({/*  force: true  */ }).then(async () => {
+pers.sync({ alter: true }).then(async () => {
   console.log("modelos sincronizados");
   app.get('/', async (request, response) => {
     return response.status(200).send({ message: `Welcome` })
