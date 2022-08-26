@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require("../database")
 
-const usu_domicilio =
+
+module.exports = (sequelize) => {
     sequelize.define('domicilio', {
         id_domicilio: {
             type: DataTypes.BIGINT,
@@ -29,7 +29,4 @@ const usu_domicilio =
             allowNull: false
         }
     });
-
-
-
-module.exports = usu_domicilio
+}

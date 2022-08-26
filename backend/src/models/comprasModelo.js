@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize')
-const sequelize = require("../database")
 
-const compras =
+
+module.exports = (sequelize) => {
     sequelize.define('compras', {
         id_compras: {
             type: DataTypes.BIGINT,
@@ -14,6 +14,4 @@ const compras =
         }
     });
 
-
-
-module.exports = compras
+}

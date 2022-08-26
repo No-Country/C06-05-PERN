@@ -1,8 +1,7 @@
 const { DataTypes } = require('sequelize')
-const sequelize = require("../database")
-const productos = require("./productosModelo")
 
-const categorias =
+
+module.exports = (sequelize) => {
     sequelize.define('categorias', {
         id_categoria: {
             type: DataTypes.BIGINT,
@@ -16,16 +15,4 @@ const categorias =
     });
 
 
-
-
-categorias.hasMany(productos, {
-    foreignKey: "id_categoria",
-    sourceKey: "id_categoria"
-})
-
-productos.belongsTo(categorias, {
-    foreignKey: "id_categoria",
-    targetId: "id_categoria"
-})
-
-module.exports = categorias
+}

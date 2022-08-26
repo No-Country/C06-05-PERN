@@ -1,9 +1,9 @@
-const app = require("./app")
+const app = require("./src/app")
 const cors = require("cors");
-require("./basededatos")
+require("./src/database")
 
 
-const { sequelize } = require("./basededatos")
+const sequelize = require("./src/database")
 
 
 
@@ -19,12 +19,17 @@ app.get('/', function (req, res) {
   res.send('Hello World')
 })
 
-const pers = require("./Model/personas")
+const { conn } = require("./src/database")
 
+/* const usu = require("./src/models/usuarios")
+const com = require("./src/models/categoriaModelos")
+const pl = require("./src/models/comprasModelo")
+const pla = require("./src/models/domicModelos")
+const loop = require("./src/models/pedidoModelos")
+const loop2 = require("./src/models/productosModelo")
+const gropu = [usu, com, pl, pla, loop, loop2] */
 
-
-
-pers.sync({ alter: true }).then(async () => {
+conn.sync({ force: true }).then(async () => {
   console.log("modelos sincronizados");
   app.get('/', async (request, response) => {
     return response.status(200).send({ message: `Welcome` })
@@ -41,3 +46,4 @@ pers.sync({ alter: true }).then(async () => {
 
 
 });
+console.log("listo");
