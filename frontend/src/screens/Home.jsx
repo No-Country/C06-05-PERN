@@ -1,11 +1,11 @@
 /* This example requires Tailwind CSS v2.0+ */
 export default function Example() {
     return (
-      <div className="relative bg-white overflow-hidden">
+      <div className="relative bg-gray-900 overflow-hidden">
         <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
             <div className="sm:max-w-lg">
-              <h1 className="text-4xl font font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-6xl">
+              <h1 className="text-4xl font font-bold tracking-tight text-white sm:tracking-tight sm:text-6xl">
                 Summer styles are finally here
               </h1>
               <p className="mt-4 text-xl text-gray-500">
