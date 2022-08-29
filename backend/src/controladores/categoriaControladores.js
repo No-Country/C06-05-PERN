@@ -20,6 +20,7 @@ const TOTALCATEGORIAS = {
             const {
                 nombre_categoria
             } = req.body
+            console.log(nombre_categoria);
             const NUEVACATEGORIA = await categorias.create({
                 nombre_categoria
             })
@@ -51,7 +52,7 @@ const TOTALCATEGORIAS = {
         const { nombre, apellido, email, contra } = req.body;
         try {
 
-            const UNUSER = await categoria.findByPk(id)
+            const UNUSER = await categorias.findByPk(id)
             UNUSER.nombre_categoria = nombre_categoria
 
             await UNUSER.save()
