@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function Example() {
@@ -91,12 +91,13 @@ export default function Example() {
                   </div>
                 </div>
   
-                <button
+                <Link
+                  to=""
                   className="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700"
                   onClick={() => goToProducts()}
                 >
                   Shop Collection
-                </button>
+                </Link>
               </div>
             </div>
           </div>
