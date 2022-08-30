@@ -1,4 +1,4 @@
-const productos = require("../models/productosModelo")
+const { compras } = require("../database")
 
 const TOTALCOMPRAS = {
 

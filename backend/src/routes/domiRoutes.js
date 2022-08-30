@@ -1,4 +1,5 @@
 const domiRoutes = require("express").Router();
+const { actualizarDomicilio, buscarUnDomicilio, borrarDomicilio } = require("../controladores/domicilioControladores");
 const TOTALDOMICILIOS = require("../controladores/domicilioControladores")
 const { getDomicilio, crearDomicilio } = TOTALDOMICILIOS
 
@@ -9,8 +10,8 @@ domiRoutes.route("/domicilio")
     .post(crearDomicilio)
 
 domiRoutes.route("/domicilio/id")
-    .get()
-    .put()
-    .delete()
+    .get(buscarUnDomicilio)
+    .put(actualizarDomicilio)
+    .delete(borrarDomicilio)
 
 module.exports = domiRoutes

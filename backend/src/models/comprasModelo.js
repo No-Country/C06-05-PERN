@@ -10,7 +10,8 @@ module.exports = (sequelize) => {
         },
         estado: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: false
         }
     });
 
