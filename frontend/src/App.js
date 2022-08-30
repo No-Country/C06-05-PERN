@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Navbar from './screens/generales/Navbar'
 import ItemDetail from './screens/ItemDetail.jsx'
