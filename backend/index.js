@@ -1,5 +1,6 @@
+
+const passport = require("passport");
 const app = require("./src/app")
-const cors = require("cors");
 require("./src/database")
 
 
@@ -13,8 +14,8 @@ const path = require('path');
 const PORT = 4000
 
 
-app.use(cors());
 
+app.use(passport.initialize());
 app.get('/', function (req, res) {
   res.send('Hello World')
 })
