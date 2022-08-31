@@ -8,7 +8,7 @@ goodsRouter.route("/productos")
     .get(getProductos)
     .post(crearProductos)
 
-goodsRouter.route("/productos/id")
+goodsRouter.route("/productos/:id")
     .get(buscarUnProducto)
     .put(actualizarProducto)
     .delete(borrarProductos)

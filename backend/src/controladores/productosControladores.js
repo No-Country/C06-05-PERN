@@ -43,17 +43,17 @@ const TOTALPRODUCTOS = {
         }
 
     }, borrarProductos: async (req, res) => {
-        const ID = res.params.id
+        const { id } = req.params
         try {
-            const UNPRODUCTO = await productos.findOne({
+            const UNPRODUCTO = await productos.destroy({
                 where: {
-                    id,
+                    id_productos: id
                 }
             })
             res.json(UNPRODUCTO)
-            res.sendStatus(204)
+
         } catch (error) {
-            return res.status(500).json({ message: error.message })
+            return res.json({ message: error.message })
         }
 
     }, actualizarProducto: async (req, res) => {

@@ -9,7 +9,7 @@ petRoutes.route("/pedidos")
     .get(getPedidos)
     .post(crearPedidos)
 
-petRoutes.route("/pedidos/id")
+petRoutes.route("/pedidos/:id")
     .get(buscarUnPedido)
     .put(actualizarPedido)
     .delete(borrarPedidos)

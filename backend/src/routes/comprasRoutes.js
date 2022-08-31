@@ -8,7 +8,7 @@ comprasRoutes.route("/pedidos")
     .get(getCompras)
     .post(crearCompras)
 
-comprasRoutes.route("/pedidos/id")
+comprasRoutes.route("/pedidos/:id")
     .get()
     .put()
     .delete()
