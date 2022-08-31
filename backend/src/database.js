@@ -107,7 +107,7 @@ productos.hasMany(pedidos, {
   sourceKey: "id_productos"
 })
 
-pedidos.belongsToMany(productos, {
+pedidos.hasMany(productos, {
   foreignKey: "id_productos",
   targetKey: "id_productos"
 })
