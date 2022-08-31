@@ -30,7 +30,7 @@ const loop = require("./src/models/pedidoModelos")
 const loop2 = require("./src/models/productosModelo")
 const gropu = [usu, com, pl, pla, loop, loop2] */
 
-conn.sync({ /* force: true */ }).then(async () => {
+conn.sync({ alter: true }).then(async () => {
   console.log("modelos sincronizados");
   app.get('/', async (request, response) => {
     return response.status(200).send({ message: `Welcome` })

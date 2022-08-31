@@ -1,5 +1,6 @@
+const { Sequelize } = require('sequelize');
 const { productos } = require("../database")
-
+const Op = Sequelize.Op
 const TOTALPRODUCTOS = {
 
     getProductos: async (req, res) => {
@@ -23,6 +24,7 @@ const TOTALPRODUCTOS = {
                 comentarios_prod,
                 stock,
                 precio,
+                nombre_url,
                 id_categoria
 
             } = req.body
@@ -32,6 +34,7 @@ const TOTALPRODUCTOS = {
                 comentarios_prod,
                 stock,
                 precio,
+                nombre_url,
                 id_categoria
             })
             res.json(nuevoProducto)
@@ -58,7 +61,7 @@ const TOTALPRODUCTOS = {
 
     }, actualizarProducto: async (req, res) => {
         const { id } = req.params;
-        const { nombre_prod, color, comentarios_prod, stock, imagen, precio, id_categoria } = req.body;
+        const { nombre_prod, color, comentarios_prod, stock, imagen, precio, id_categoria, nombre_url } = req.body;
         try {
 
             const UNUSER = await productos.findByPk(id)
@@ -68,6 +71,7 @@ const TOTALPRODUCTOS = {
             UNUSER.stock = stock
             UNUSER.imagen = imagen
             UNUSER.precio = precio
+            UNUSER.nombre_url = nombre_url
             UNUSER.id_categoria = id_categoria
             await UNUSER.save()
 
@@ -97,7 +101,9 @@ const TOTALPRODUCTOS = {
                 where: {
                     [Op.or]: [
                         { nombre_prod: { [Op.like]: "%" + dato + "%" } },
-                        { nombre_prod: { [Op.like]: "%" + dato + "%" } }]
+                        { nombre_url: { [Op.like]: "%" + dato + "%" } },
+                        { comentarios_prod: { [Op.like]: "%" + dato + "%" } },
+                        { color: { [Op.like]: "%" + dato + "%" } }]
                 }
             }
 

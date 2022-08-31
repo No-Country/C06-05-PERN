@@ -13,6 +13,10 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        nombre_url: {
+            type: DataTypes.STRING,
+
+        },
         color: {
             type: DataTypes.STRING,
             allowNull: false
