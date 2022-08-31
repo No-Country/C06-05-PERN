@@ -181,11 +181,11 @@ export default function Example({ handleCloseCart }) {
                           <input className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Calle" aria-label="Email" />
                         </div>
                         <div className="mt-2">
-                          <label className="hidden text-sm block text-gray-600" for="cus_email">City</label>
+                          <label className="text-sm block text-gray-600" for="cus_email">City</label>
                           <input className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Ciudad" aria-label="Email" />
                         </div>
                         <div className="inline-block mt-2 w-1/2 pr-1">
-                          <label className="hidden block text-sm text-gray-600" for="cus_email">Pais</label>
+                          <label className="block text-sm text-gray-600" for="cus_email">Pais</label>
                           <select className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Pais" aria-label="Email">
                             <option selected>Elige pais</option>
                             <option value="ARG">Argentina</option>
@@ -195,7 +195,7 @@ export default function Example({ handleCloseCart }) {
                             <option value="DE">Germany</option>      </select>
                         </div>
                         <div className="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                          <label className="hidden block text-sm text-gray-600" for="cus_email">Zip</label>
+                          <label className="block text-sm text-gray-600" for="cus_email">Zip</label>
                           <input className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="CP" aria-label="Email" />
                         </div>
                         <p className="mt-4 text-gray-800 font-medium">Payment information</p>

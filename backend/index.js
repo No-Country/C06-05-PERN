@@ -1,19 +1,10 @@
 const app = require("./src/app")
-const cors = require("cors");
 require("./src/database")
-
-
 const sequelize = require("./src/database")
-
-
-
 
 const path = require('path');
 
 const PORT = 4000
-
-
-app.use(cors());
 
 app.get('/', function (req, res) {
   res.send('Hello World')
@@ -43,7 +34,5 @@ conn.sync({ /* force: true */ }).then(async () => {
       console.log('Imposible conectarse ' + error)
     });
   }
-
-
 });
 console.log("listo");

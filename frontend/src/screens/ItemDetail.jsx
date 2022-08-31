@@ -87,7 +87,7 @@ export default function ItemDetail() {
               <div className="my-5">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm text-gray-900 font-medium">Size</h3>
-                  <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href="#" className="text-sm font-medium text-[#96BE8C] hover:text-[#96BE8C]">
                     Size guide
                   </a>
                 </div>
@@ -105,7 +105,7 @@ export default function ItemDetail() {
                             size.inStock
                               ? 'bg-white shadow-sm text-gray-900 cursor-pointer'
                               : 'bg-gray-50 text-gray-200 cursor-not-allowed',
-                            active ? 'ring-2 ring-indigo-500' : '',
+                            active ? 'ring-2 ring-[#96BE8C]' : '',
                             'group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6'
                           )
                         }
@@ -117,7 +117,7 @@ export default function ItemDetail() {
                               <span
                                 className={classNames(
                                   active ? 'border' : 'border-2',
-                                  checked ? 'border-indigo-500' : 'border-transparent',
+                                  checked ? ' border-[#96BE8C]' : 'border-transparent',
                                   'absolute -inset-px rounded-md pointer-events-none'
                                 )}
                                 aria-hidden="true"
@@ -199,7 +199,7 @@ export default function ItemDetail() {
               {/* add to bag Button */}
               <button
                 type="submit"
-                className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="mt-10 w-full bg-[#96BE8C] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-[#77b469] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#77b469]"
               >
                 Add to bag
               </button>
