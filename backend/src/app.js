@@ -1,8 +1,11 @@
+require("dotenv").config();
+const cors = require("cors");
 const express = require('express')
 const morgan = require("morgan")
 
 
 const app = express()
+app.use(cors());
 
 const goodsRouter = require('./routes/ProductRoutes')
 const catRoutes = require("./routes/catRoutes")
