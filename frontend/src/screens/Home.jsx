@@ -18,7 +18,7 @@ export default function Example() {
               <h1 className="text-4xl font font-bold tracking-tight text-white sm:tracking-tight sm:text-6xl">
                 Summer styles are finally here
               </h1>
-              <p className="mt-4 text-xl text-gray-500">
+              <p className="mt-4 text-xl text-gray-200">
                 This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care
                 if you live or die.
               </p>
@@ -93,7 +93,7 @@ export default function Example() {
   
                 <Link
                   to=""
-                  className="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700"
+                  className="bg-[#629460] inline-block text-center  border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-[#71ac6f] transition ease-in-out "
                   onClick={() => goToProducts()}
                 >
                   Shop Collection

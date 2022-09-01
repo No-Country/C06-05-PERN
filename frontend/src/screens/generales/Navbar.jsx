@@ -5,10 +5,22 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import CartWidget from '../CartWidget'
 import {Link} from 'react-router-dom'
 const navigation = [
-  'Remeras',
-  'Pantalones',
-  'Accesorios',
-  '¿Como comprar?'
+  {
+    name:"Remeras",
+    url:"remeras"
+  },
+  {
+    name:"Pantalones",
+    url:"pantalones"
+  },
+  {
+    name:"Accesorios",
+    url:"accesorios"
+  },
+  {
+    name:"¿Como comprar?",
+    url:"comocomprar"
+  }
 ]
 
 function classNames(...classes) {
@@ -34,22 +46,13 @@ export default function Example({ setIsShowCart, isShowCart }) {
               </div>
               <div className="flex-1 flex items-center justify-evenly sm:items-stretch sm:justify-between">
                 <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500"
-                    alt="Workflow"
-                  />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500"
-                    alt="Workflow"
-                  />
+                  <Link to={"/"} className="text-white font-medium text-2xl">Remecycle</Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item, index) =><Link to={"/" + item} key={index} className={classNames('text-white','px-3 py-2 rounded-md text-sm font-medium')} aria-current={item.current ? 'page' : undefined}>{item}</Link>)}
+                    {navigation.map((item, index) =><Link to={"/" + item.url} key={index} className={classNames('text-white','px-3 py-2 rounded-md text-sm font-medium')} aria-current={item.current ? 'page' : undefined}>{item.name}</Link>)}
                   </div>
-                </div>;
+                </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   <button
                     type="button"
