@@ -25,7 +25,11 @@ const TOTALPRODUCTOS = {
                 stock,
                 precio,
                 nombre_url,
-                id_categoria
+                id_categoria,
+                talle,
+                categorias_url,
+                imagen
+
 
             } = req.body
             const nuevoProducto = await productos.create({
@@ -35,7 +39,10 @@ const TOTALPRODUCTOS = {
                 stock,
                 precio,
                 nombre_url,
-                id_categoria
+                id_categoria,
+                talle,
+                categorias_url,
+                imagen
             })
             res.json(nuevoProducto)
 
@@ -61,7 +68,7 @@ const TOTALPRODUCTOS = {
 
     }, actualizarProducto: async (req, res) => {
         const { id } = req.params;
-        const { nombre_prod, color, comentarios_prod, stock, imagen, precio, id_categoria, nombre_url } = req.body;
+        const { nombre_prod, color, comentarios_prod, stock, imagen, precio, id_categoria, nombre_url, talle, categorias_url } = req.body;
         try {
 
             const UNUSER = await productos.findByPk(id)
@@ -72,6 +79,8 @@ const TOTALPRODUCTOS = {
             UNUSER.imagen = imagen
             UNUSER.precio = precio
             UNUSER.nombre_url = nombre_url
+            UNUSER.talle = talle
+            UNUSER.categorias_url = categorias_url
             UNUSER.id_categoria = id_categoria
             await UNUSER.save()
 
@@ -102,8 +111,7 @@ const TOTALPRODUCTOS = {
                     [Op.or]: [
                         { nombre_prod: { [Op.like]: "%" + dato + "%" } },
                         { nombre_url: { [Op.like]: "%" + dato + "%" } },
-                        { comentarios_prod: { [Op.like]: "%" + dato + "%" } },
-                        { color: { [Op.like]: "%" + dato + "%" } }]
+                        { comentarios_prod: { [Op.like]: "%" + dato + "%" } }]
                 }
             }
 

@@ -18,6 +18,14 @@ module.exports = (sequelize) => {
 
         },
         color: {
+            type: DataTypes.JSON,
+
+        },
+        talle: {
+            type: DataTypes.JSON,
+
+        },
+        categorias_url: {
             type: DataTypes.STRING,
             allowNull: false
         },
