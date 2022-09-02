@@ -2,7 +2,7 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline'
-
+import { motion } from  "framer-motion" ;
 const products = [
   {
     id: 1,
@@ -28,11 +28,11 @@ const products = [
   // More products...
 ]
 
-export default function Example() {
+export default function Example({ handleCloseCart}) {
   const [open, setOpen] = useState(true)
 
   return (
-    <Transition.Root show={open} as={Fragment}>
+    <Transition.Root show={open} as={Fragment} onClick={()=>handleCloseCart()}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
           as={Fragment}
@@ -67,10 +67,16 @@ export default function Example() {
                           <button
                             type="button"
                             className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                            onClick={() => setOpen(false)}
+                            onClick={() => {
+                              setOpen(false)
+                              handleCloseCart()
+                            }}
                           >
                             <span className="sr-only">Close panel</span>
-                            <XIcon className="h-6 w-6" aria-hidden="true" />
+                            <XIcon className="h-6 w-6" aria-hidden="true" onClick={() =>{
+                              setOpen(false)
+                              handleCloseCart()
+                              }} />
                           </button>
                         </div>
                       </div>
@@ -138,7 +144,10 @@ export default function Example() {
                           <button
                             type="button"
                             className="font-medium text-indigo-600 hover:text-indigo-500"
-                            onClick={() => setOpen(false)}
+                            onClick={() =>{
+                              setOpen(false)
+                              handleCloseCart()
+                            }}
                           >
                             Continue Shopping<span aria-hidden="true"> &rarr;</span>
                           </button>

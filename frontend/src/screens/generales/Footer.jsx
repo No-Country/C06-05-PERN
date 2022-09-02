@@ -190,14 +190,13 @@ function Footer() {
         <div class="pt-8 mt-16 border-t border-white/10">
             <p class="text-xs leading-relaxed text-center text-gray-600">
             © Company 2022. All rights reserved.
+
         
             <br />
         
             Created with
             <a href="" class="underline transition hover:text-white">Laravel</a> and
-            <a href="" class="underline transition hover:text-white"
-                >Laravel Livewire</a
-            >.
+            <a href="" class="underline transition hover:text-white" >Laravel Livewire</a>
             </p>
         </div>
         </div>
