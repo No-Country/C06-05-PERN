@@ -28,6 +28,5 @@ userRouter.route("/cierresesion")
 
 userRouter.route("/auth/signintoken").get(
     passport.authenticate("jwt", { session: false }),
-    verifyToken
-);
+    verifyToken);
 module.exports = userRouter;

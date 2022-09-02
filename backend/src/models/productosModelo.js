@@ -17,25 +17,28 @@ module.exports = (sequelize) => {
         nombre_url: {
             type: DataTypes.STRING
         },
-        comentarios_prod: {
+        color: {
+            type: DataTypes.JSON,
+
+        },
+        talle: {
+            type: DataTypes.JSON,
+
+        },
+        categorias_url: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        color: {
-            type: DataTypes.JSON
-        },
-        talle: {
-            type: DataTypes.JSON
-        },
-        categorias_url: {
-            type: DataTypes.STRING
+        comentarios_prod: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         stock: {
             type: DataTypes.INTEGER,
 
         },
         imagen: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
         },
         precio: {
             type: DataTypes.INTEGER,

@@ -1,18 +1,23 @@
 const passport = require("passport");
 const jwtStrategy = require("passport-jwt").Strategy;
 const extractJwt = require("passport-jwt").ExtractJwt;
-
+const { Sequelize } = require('sequelize');
 const { usuarios } = require("./database");
 
 module.exports = passport.use(
     new jwtStrategy(
         {
             jwtFromRequest: extractJwt.fromAuthHeaderAsBearerToken(),
-            secretOrKey: process.env.SECRET_KEY,
+            secretOrKey: "MyKey",
         },
         (jwt_payload, done) => {
+            console.log("holaaaaaa");
             console.log(jwt_payload);
-            usuarios.findOne({ _id: jwt_payload.id })
+            usuarios.findOne({
+                where: {
+                    id: jwt_payload.id,
+                },
+            })
 
                 .then((usuarios) => {
                     console.log(usuarios);

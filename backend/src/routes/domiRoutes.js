@@ -9,7 +9,7 @@ domiRoutes.route("/domicilio")
     .get(getDomicilio)
     .post(crearDomicilio)
 
-domiRoutes.route("/domicilio/id")
+domiRoutes.route("/domicilio/:id")
     .get(buscarUnDomicilio)
     .put(actualizarDomicilio)
     .delete(borrarDomicilio)

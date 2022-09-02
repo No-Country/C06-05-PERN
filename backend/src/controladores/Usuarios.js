@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 const { usuarios } = require("../database")
 const Op = Sequelize.Op
-console.log(usuarios);
+
 
 const jwt = require("jsonwebtoken");
 
@@ -138,7 +138,7 @@ const USUARIOSTOTALES = {
                         }
                     }
                     );
-                    console.log(passwordMatches);
+
 
                     if (passwordMatches) {
                         const userData = {
@@ -147,10 +147,7 @@ const USUARIOSTOTALES = {
                             apellido: userExist.apellido,
                             email: userExist.email,
                         };
-                        console.log("holaaaa");
-                        console.log(userExist);
 
-                        console.log(userData);
                         await userExist.save();
                         const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, {
                             expiresIn: 60 * 60 * 24,
@@ -159,7 +156,7 @@ const USUARIOSTOTALES = {
                         res.json({
                             success: true,
                             response: { token, userData },
-                            message: "bienvenido otra vez" + userData.nombre,
+                            message: "bienvenido otra vez " + userData.nombre,
                         });
                     }
                 } else {
@@ -186,7 +183,8 @@ const USUARIOSTOTALES = {
 
     signOutUser: async (req, res) => {
         console.log("usuario deslogueado");
-        const email = req.body.userData;
+        const { email } = req.body;
+
         const user = await usuarios.findOne({
             where: {
                 email,
@@ -200,7 +198,9 @@ const USUARIOSTOTALES = {
     },
 
     verifyToken: (req, res) => {
+
         if (!req.err) {
+
             res.json({
                 success: true,
                 response: {

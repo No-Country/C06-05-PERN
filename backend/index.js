@@ -1,3 +1,5 @@
+
+const passport = require("passport");
 const app = require("./src/app")
 require("./src/database")
 const sequelize = require("./src/database")
@@ -5,7 +7,7 @@ const sequelize = require("./src/database")
 const path = require('path');
 
 const PORT = 4000
-
+app.use(passport.initialize());
 app.get('/', function (req, res) {
   res.send('Hello World')
 })
@@ -20,7 +22,7 @@ const loop = require("./src/models/pedidoModelos")
 const loop2 = require("./src/models/productosModelo")
 const gropu = [usu, com, pl, pla, loop, loop2] */
 
-conn.sync({ /* force: true */ }).then(async () => {
+conn.sync({ /* froce: true */ }).then(async () => {
   console.log("modelos sincronizados");
   app.get('/', async (request, response) => {
     return response.status(200).send({ message: `Welcome` })
