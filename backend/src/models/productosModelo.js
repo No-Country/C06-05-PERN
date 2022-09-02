@@ -1,3 +1,4 @@
+const { JSONB } = require('sequelize');
 const { DataTypes } = require('sequelize')
 
 
@@ -13,7 +14,18 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        nombre_url: {
+            type: DataTypes.STRING
+        },
         color: {
+            type: DataTypes.JSON,
+
+        },
+        talle: {
+            type: DataTypes.JSON,
+
+        },
+        categorias_url: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -26,7 +38,7 @@ module.exports = (sequelize) => {
 
         },
         imagen: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
         },
         precio: {
             type: DataTypes.INTEGER,

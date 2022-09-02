@@ -13,7 +13,7 @@ goodsRouter.route("/productos/:id")
     .put(actualizarProducto)
     .delete(borrarProductos)
 
-goodsRouter.route("/productosnombre")
+goodsRouter.route("/productosnombre/:dato")
     .get(buscarUnProductoPorNombre)
 
 module.exports = goodsRouter

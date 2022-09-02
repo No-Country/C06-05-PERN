@@ -198,8 +198,8 @@ const USUARIOSTOTALES = {
     },
 
     verifyToken: (req, res) => {
+
         if (!req.err) {
-            console.log("holaaaaa");
             res.json({
                 success: true,
                 response: {
