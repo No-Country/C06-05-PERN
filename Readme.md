@@ -1,6 +1,6 @@
 # <h1 align="center" color="red">remecycle</h1>
 
-<h2 align="center" > eccomerce de ropa usada </h2>
+<h2 align="center" > eccomerce de ropa ecológica </h2>
 
 ![](https://cdn.discordapp.com/attachments/935948268880404510/1015548299664699545/unknown.png)
 
