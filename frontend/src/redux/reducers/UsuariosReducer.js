@@ -19,7 +19,6 @@ const UsuariosReducer = (state = initialState, action) => {
                 user: action.payload,
             };
         case 'message':
-            console.log(action.payload)
             return {
                 ...state,
                 snackbar: action.payload,

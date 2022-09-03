@@ -26,7 +26,7 @@ const navigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-export default function Example({ setIsShowCart, isShowCart }) {
+export default function Example() {
   return (
     <Disclosure as="nav" className="bg-transparent z-10 absolute w-full">
       {({ open }) => (
@@ -54,14 +54,14 @@ export default function Example({ setIsShowCart, isShowCart }) {
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <button
+                  <Link
                     type="button"
-                    className="flex justify-content items-center rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white z-10"
-                    onClick={() => setIsShowCart(true)}
+                    className="flex justify-content items-center rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 z-10"
+                    to="/cart"
                   >
                     {/* <span className="sr-only">View notifications</span> */}
                     <CartWidget className="h-6 w-6" aria-hidden="true" />
-                  </button>
+                  </Link>
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="ml-3 relative z-10">

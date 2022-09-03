@@ -4,6 +4,9 @@ import { RadioGroup } from '@headlessui/react'
 import imagenGota from '../../assets/gota.png'
 import imagenDioxidoC from '../../assets/dioxido-de-carbono.png'
 import Spinner from '../generales/Spinner'
+import CarritoReducer from '../../redux/reducers/CarritoReducer'
+import { addOneProduc } from '../../redux/reducers/CarritoReducer'
+import { useDispatch, useSelector } from 'react-redux'
 function className(...className) {
   return className.filter(Boolean).join(' ')
 }
@@ -65,9 +68,11 @@ const product = {
 
 
 function ItemDetail({ product }) {
-  console.log(product)
-  /*   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-    const [selectedSize, setSelectedSize] = useState(product.sizes[2]) */
+  console.log(product.id_productos);
+  let dispatch = useDispatch()
+  const scremProduc = (oneID) => {
+    dispatch(addOneProduc(oneID));
+  }
   return (
     <div className="h-min w-full  bg-[#f7f7f7] ">
       <div className="max-w-[1071px] min-h-[741px] p-10 border rounded-md transform -translate-y-40  bg-white flex flex-row  items-center justify-between mx-auto sm:flex-column md:flex-column flex-wrap">
@@ -188,7 +193,7 @@ function ItemDetail({ product }) {
               </div>
               <div className='flex justify-start' >
                 <img className='w-5 h-5 opacity-20' src={imagenDioxidoC} />
-                <p  className='text-gray-400 text-sm'>1.36 kg de emisiones de CO2 ahorrados</p>
+                <p className='text-gray-400 text-sm'>1.36 kg de emisiones de CO2 ahorrados</p>
               </div>
 
             </div>
@@ -198,6 +203,7 @@ function ItemDetail({ product }) {
             <button
               type="submit"
               className="mt-10 w-full bg-[#96BE8C] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-[#77b469] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#77b469]"
+              onClick={() => scremProduc(product.id_productos)}
             >
               Add to bag
             </button>

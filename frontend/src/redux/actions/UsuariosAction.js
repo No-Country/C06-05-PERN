@@ -3,7 +3,7 @@ const UserAction = {
   signInUser: (logedUser) => {
       return async (dispatch, getState) => {
         const user = await axios.post(
-          "http://localhost:4000/api/iniciosesion",
+          "https://backendpern.herokuapp.com/api/iniciosesion",
         logedUser,
         )
         if (user.data.success) {
@@ -24,7 +24,7 @@ const UserAction = {
   VerificarToken: (token) => {
     return async (dispatch, getState) => {
       const user = await axios.get(
-        "http://localhost:4000/api/auth/signintoken",
+        "https://backendpern.herokuapp.com/api/auth/signintoken",
         {
           headers: {
             "Authorization": "Bearer " + token,
@@ -49,12 +49,9 @@ const UserAction = {
   signUpUser: (userData) => {
     console.log(userData)
     return async (dispatch, getState) => {
-        const res = await axios.post('http://localhost:4000/api/usuarios',  userData)
+        const res = await axios.post('https://backendpern.herokuapp.com/api/usuarios',  userData)
         dispatch({type: 'message', 
                    payload: {view: true,
                              message: "Usuario registrado exitosamente",
-                             success: true}});
-    }
-  }
-}
+                             success: true}})}}}
 export default UserAction
