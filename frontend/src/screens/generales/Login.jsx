@@ -8,7 +8,7 @@ import { MdOutlineSearch } from "react-icons/md";
 const Login_input = (props) => {
   return (
     <div>
-      <p className='my-3 font-semibold  '> {props.label} </p>
+      <p className='my-3 font-semibold'> {props.label} </p>
       <input className='max-w-[426px]  w-full h-[52,96px] rounded-full placeholder:text-sm placeholder:  box-border py-2 pl-9 pr-3 border-[#96BE8C] border-2 focus:outline-none ' placeholder={props.text} />
     </div>
   )
@@ -35,14 +35,12 @@ const Login = () => {
 
 
   return (
-    <div className='h-min w-full'>
+    <div className='h-min w-full bg-[#f7f7f7]'>
       <div className='flex relative justify-center items-center w-full h-96 bg-center bg-cover' style={{ backgroundImage: `url(${Bkg})` }}>
-        <div>
-          <h3>Atras</h3>
-        </div>
+          <h2 className='text-5xl font-bold pb-16 text-white drop-shadow-lg'>{user ? 'Inicia sesión' : 'Registrate'}</h2>
       </div>
      {/* login */}
-      <div className='max-w-[1071px] min-h-[741px] p-10 rounded-md transform -translate-y-20  bg-white flex flex-row  items-center justify-between mx-auto '>
+      <div className='max-w-[1071px] min-h-[741px] p-10 border rounded-md transform -translate-y-40  bg-white flex flex-row  items-center justify-between mx-auto '>
         <div className='max-w-[529px] max-h-[661px]   '>
           {user == true ?
             <img src={logo_login1}></img> :
@@ -57,8 +55,8 @@ const Login = () => {
             <p className='mx-auto text-center font-semibold '>Welcome to lorem..!</p>
             {/* boton de opciones */}
             <div className='w-[322px] h-[59px] bg-[#c7dbc1] rounded-full overflow-auto my-6 flex justify-around items-center mx-auto'>
-              <button onClick={cambiarLoginPage} className='bg-[#97bf8c] w-[143px] h-[40px] rounded-full text-white'>Login</button>
-              <button onClick={cambiarLoginPage} className='bg-[#97bf8c] w-[143px] h-[40px] rounded-full text-white' >Register</button>
+              <button onClick={()=>cambiarLoginPage()} className={!user ? 'bg-[#c7dbc1] w-[143px] h-[40px] rounded-full text-white' : 'bg-[#97bf8c] w-[143px] h-[40px] rounded-full text-white'}>Login</button>
+              <button onClick={()=>cambiarLoginPage()} className={!user ? 'bg-[#97bf8c] w-[143px] h-[40px] rounded-full text-white' : 'bg-[#c7dbc1] w-[143px] h-[40px] rounded-full text-white'} >Register</button>
             </div>
 
           </div>
