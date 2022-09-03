@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import ProductosAction from '../redux/actions/ProductosAction'
 import Spinner from './generales/Spinner'
 import {useParams} from 'react-router-dom'
+import Nosotros from './generales/Nosotros';
 
 const Products = () => {
   const {categoria} = useParams()
@@ -30,10 +31,16 @@ const Products = () => {
     response()
   },[categoria])
 
+  
   const obtenerValor = (event) => {
     event.preventDefault()
     setSearch(event.target.value)
   }
+
+  if(categoria=="nosotros"){
+    return <Nosotros></Nosotros>
+    }
+
   return (
     <div className='h-min w-full  bg-[#f7f7f7] '>
       <div className='flex relative justify-center items-center w-full h-96 bg-center bg-cover' style={{ backgroundImage: `url(${Bkg})` }}>

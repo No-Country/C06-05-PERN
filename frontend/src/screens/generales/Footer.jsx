@@ -22,9 +22,7 @@ function Footer() {
             </p>
         
             <p className="mt-4 text-center text-white lg:text-left lg:text-lg">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
-                natus quod eveniet aut perferendis distinctio iusto repudiandae,
-                provident velit earum?
+            "Estamos convencidos que cuando tomamos una decisión buena para el planeta acabará siendo buena para la industria."
             </p>
         
             <div

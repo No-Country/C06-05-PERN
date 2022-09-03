@@ -20,8 +20,8 @@ const navigation = [
     url:"accesorios"
   },
   {
-    name:"¿Como comprar?",
-    url:"comocomprar"
+    name:"¿Por qué Remecycle?",
+    url:"nosotros"
   }
 
 ]
@@ -36,9 +36,9 @@ export default function Example({ setIsShowCart, isShowCart }) {
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 z-10 bg-transparent">
             <div className="relative flex items-center justify-between h-16 bg-transparent">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden ">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -54,7 +54,7 @@ export default function Example({ setIsShowCart, isShowCart }) {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
 
-                    {navigation.map((item, index) =><Link to={"/" + item.url} key={index} className={classNames('text-white','px-3 py-2 rounded-md text-sm font-medium')} aria-current={item.current ? 'page' : undefined}>{item.name}</Link>)}
+                    {navigation.map((item, index) =><Link to={"/" + item.url} key={index} className={classNames('text-white','px-3 py-2 rounded-md text-md font-medium')} aria-current={item.current ? 'page' : undefined}>{item.name}</Link>)}
 
                   </div>
                 </div>
@@ -66,7 +66,7 @@ export default function Example({ setIsShowCart, isShowCart }) {
                   >
 
                     {/* <span className="sr-only">View notifications</span> */}
-                    <CartWidget className="h-6 w-6" aria-hidden="true" />
+                    <CartWidget className="h-6 w-6 " aria-hidden="true" />
                   </button>
 
                   {/* Profile dropdown */}
@@ -76,7 +76,7 @@ export default function Example({ setIsShowCart, isShowCart }) {
                       >
                         <img
                           className="h-8 w-8 rounded-full"
-                          src=""
+                          src="https://www.pngall.com/wp-content/uploads/5/Profile-PNG-File.png"
                           alt="user"
                         />
                       </Menu.Button>
@@ -132,19 +132,21 @@ export default function Example({ setIsShowCart, isShowCart }) {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 z-10">
+            <div className="px-1 pt-2 pb-3 space-y-1 z-10 bg-white rounded-md">
               {navigation.map((item, index) => (
                 <Disclosure.Button
                   key={index}
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
+                    item.current ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700 hover:text-white',
+                    'block px-3 py-2 rounded-md text-base font-medium cursor-pointer'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
+                <Link to={item.url}>
                   {item.name}
+                  </Link>
                 </Disclosure.Button>
               ))}
             </div>

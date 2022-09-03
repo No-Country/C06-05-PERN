@@ -9,6 +9,7 @@ import ItemDetailContainer from './screens/items/ItemDetailContainer'
 import Login from './screens/generales/Login.jsx'
 import {Route, Routes} from "react-router-dom";
 
+
 function App() {
   const [isShowCart, setIsShowCart] = useState(false)
   const handleCloseCart = () => {
@@ -29,6 +30,7 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       {/*<Home/>  PATH */}
       {/* <ItemDetail/> */}
+     
     </Routes>
       <Footer/>
       </>

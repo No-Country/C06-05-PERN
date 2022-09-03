@@ -41,7 +41,7 @@ const Login = () => {
       </div>
      {/* login */}
       <div className='max-w-[1071px] min-h-[741px] p-10 border rounded-md transform -translate-y-40  bg-white flex flex-row  items-center justify-between mx-auto '>
-        <div className='max-w-[529px] max-h-[661px]   '>
+        <div className='max-w-[529px] max-h-[661px]'>
           {user == true ?
             <img src={logo_login1}></img> :
             <img src={logo_login2}></img>

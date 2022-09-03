@@ -16,11 +16,11 @@ export default function Example() {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
             <div className="sm:max-w-lg">
               <h1 className="text-4xl font font-bold tracking-tight text-white sm:tracking-tight sm:text-6xl">
-                Summer styles are finally here
+                Ropa cómoda y ecológica
               </h1>
               <p className="mt-4 text-l text-white w-96">
-                This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care
-                if you live or die.
+                Descubrí nuestra nueva colección de fibra de bamboo para el nuevo verano 2022.
+                
               </p>
             </div>
             <div>
@@ -96,7 +96,7 @@ export default function Example() {
                   className="bg-[#629460] inline-block text-center  border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-[#71ac6f] transition ease-in-out "
                   onClick={() => goToProducts()}
                 >
-                  Shop Collection
+                  Conoce nuestra tienda
                 </Link>
               </div>
             </div>
