@@ -9,7 +9,7 @@ catRoutes.route("/categorias")
     .get(getCat)
     .post(crearCat)
 
-catRoutes.route("/categorias/id")
+catRoutes.route("/categorias/:id")
     .get(buscarUnaCategoria)
     .put(actualizarCategoria)
     .delete(borrarCategoria)

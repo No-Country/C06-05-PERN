@@ -4,12 +4,26 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 import CartWidget from '../CartWidget'
+import {Link} from 'react-router-dom'
 const navigation = [
-  'Remeras',
-  'Pantalones',
-  'Accesorios',
-  'Colección 2022',
-  '¿Como comprar?'
+
+  {
+    name:"Remeras",
+    url:"remeras"
+  },
+  {
+    name:"Pantalones",
+    url:"pantalones"
+  },
+  {
+    name:"Accesorios",
+    url:"accesorios"
+  },
+  {
+    name:"¿Como comprar?",
+    url:"comocomprar"
+  }
+
 ]
 
 function classNames(...classes) {
@@ -35,34 +49,13 @@ export default function Example({ setIsShowCart, isShowCart }) {
               </div>
               <div className="flex-1 flex items-center justify-evenly sm:items-stretch sm:justify-between">
                 <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500"
-                    alt="Workflow"
-                  />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500"
-                    alt="Workflow"
-                  />
+                  <Link to={"/"} className="text-white font-medium text-2xl">Remecycle</Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
 
-                      <a
+                    {navigation.map((item, index) =><Link to={"/" + item.url} key={index} className={classNames('text-white','px-3 py-2 rounded-md text-sm font-medium')} aria-current={item.current ? 'page' : undefined}>{item.name}</Link>)}
 
-                        className={classNames(
-                          'text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-
-                        {item}
-                      </a>
-
-                    ))}
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -83,7 +76,7 @@ export default function Example({ setIsShowCart, isShowCart }) {
                       >
                         <img
                           className="h-8 w-8 rounded-full"
-                          src="https://scontent.faep7-1.fna.fbcdn.net/v/t39.30808-6/300151207_5314772438641232_1260749412772738439_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHkoi-hdcjDU-L_PXaRWDe1kqGFnkgre1CSoYWeSCt7UDEHD4o7tzeb9bRs9GOjXrCNbPOp9T9WW4qDL61pA6JE&_nc_ohc=wigAF5WC3rAAX8OrE5_&_nc_ht=scontent.faep7-1.fna&oh=00_AT_EB1tlvG9tUs6Me7DSS3xkG1zF_SQ7URhpjcHBePi9bA&oe=6309C584"
+                          src=""
                           alt="user"
                         />
                       </Menu.Button>
@@ -140,9 +133,9 @@ export default function Example({ setIsShowCart, isShowCart }) {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 z-10">
-              {navigation.map((item) => (
+              {navigation.map((item, index) => (
                 <Disclosure.Button
-                  key={item.name}
+                  key={index}
                   as="a"
                   href={item.href}
                   className={classNames(
