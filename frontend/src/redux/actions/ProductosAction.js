@@ -4,7 +4,7 @@ const ProductosAction = {
   obtenerProductos: () => {
     return async (dispatch, getState) => {
       try {
-        const res = await axios.get("https://backendpern.herokuapp.com/api/productos");
+        const res = await axios.get("http://localhost:4000/api/productos");
         return res.data;
       } catch (error) {
         console.log(error);
@@ -16,7 +16,7 @@ const ProductosAction = {
     return async (dispatch, getState) => {
       try {
         const res = await axios.get(
-          "https://backendpern.herokuapp.com/api/productosnombre/" + dato,
+          "http://localhost:4000/api/productosnombre/" + dato,
         );
         return res.data;
       } catch (error) {
@@ -28,7 +28,7 @@ const ProductosAction = {
     };
   },
   searchProductById: async (id) => {
-    const res = await axios.get("https://backendpern.herokuapp.com/api/productos/:" + id);
+    const res = await axios.get("http://localhost:4000/api/productos/:" + id);
     console.log(res);
     return {
       response: res.data,

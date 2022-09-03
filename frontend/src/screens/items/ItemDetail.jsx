@@ -68,7 +68,6 @@ const product = {
 
 
 function ItemDetail({ product }) {
-  console.log(product.id_productos);
   let dispatch = useDispatch()
   const scremProduc = (oneID) => {
     dispatch(addOneProduc(oneID));
