@@ -4,11 +4,11 @@ import Bkg from '../../assets/Bkg.webp'
 const Nosotros = () => {
   return (
     
-    <div className='h-min w-full bg-[#f7f7f7]'>
+    <div className='h-min bg-[#f7f7f7] '>
       <div className='flex relative justify-center items-center w-full h-96 bg-center bg-cover' style={{ backgroundImage: `url(${Bkg})` }}>
           <h2 className='text-5xl font-bold pb-16 text-white drop-shadow-lg'>Nosotros </h2>
       </div>
-      <div className='w-full px-[20%] my-20 bg-[#f7f7f7]'>
+      <div className='w-10/12 rounded-2xl mx-auto px-[20%] my-20 bg-[#f7f7f7] transform -translate-y-60 '>
       <h1 className='font-bold text-center mb-5 text-2xl text-[#787575]'>¿Por qué Remecycle?</h1>
         <p className='text-[19px]'>
             Somos una Marca Argentina de Indumentaria Sustentable. <b>Remecycle Indumentaria </b>nacio en 2020 por personas que estan convencidas en que cada aporte y el trabajo en equipo puede hacer bien al planeta y a quienes lo habitamos.
