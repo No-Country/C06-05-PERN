@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './App.css';
 import Navbar from './screens/generales/Navbar'
 import SideShoppingCart from './screens/SideShoppingCart.jsx'
@@ -8,13 +8,25 @@ import Footer from './screens/generales/Footer'
 import ItemDetailContainer from './screens/items/ItemDetailContainer'
 import Login from './screens/generales/Login.jsx'
 import {Route, Routes} from "react-router-dom";
+import UsuariosAction from './redux/actions/UsuariosAction'
+import { useDispatch } from 'react-redux'
 function App() {
+
   const [isShowCart, setIsShowCart] = useState(false)
+  const dispatch = useDispatch()
   const handleCloseCart = () => {
     setTimeout(()=>{
       setIsShowCart(!isShowCart) 
     }, 500)
   }
+  
+useEffect(() => {
+    if (localStorage.getItem('token') !== null) {
+      const token = localStorage.getItem("token")
+      dispatch(UsuariosAction.VerificarToken(token))
+    }
+  }, [])
+
   return (
     <>
       <Navbar setIsShowCart={setIsShowCart} isShowCart={isShowCart} handleCloseCart={handleCloseCart}/>

@@ -127,7 +127,7 @@ export default function Example({ setIsShowCart, isShowCart }) {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 z-10">
               {navigation.map((item, index) => (
-                <Disclosure.Button
+                <Link
                   key={index}
                   as="a"
                   href={item.href}
@@ -136,9 +136,9 @@ export default function Example({ setIsShowCart, isShowCart }) {
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
-                >
+                  to={item.url}>
                   {item.name}
-                </Disclosure.Button>
+                  </Link>
               ))}
             </div>
           </Disclosure.Panel>
