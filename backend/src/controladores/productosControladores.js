@@ -24,7 +24,7 @@ const TOTALPRODUCTOS = {
         talle,
         categorias_url,
         nombre_url,
-        imagen
+        imagen,
       } = req.body;
       const nuevoProducto = await productos.create({
         nombre_prod,
@@ -36,7 +36,7 @@ const TOTALPRODUCTOS = {
         talle,
         categorias_url,
         nombre_url,
-        imagen
+        imagen,
       });
       res.json(nuevoProducto);
     } catch (error) {
@@ -93,11 +93,7 @@ const TOTALPRODUCTOS = {
   buscarUnProducto: async (req, res) => {
     const { id } = req.params;
     try {
-      const UNUSUARIO = await productos.findOne({
-        where: {
-          id_productos: id,
-        },
-      });
+      const UNUSUARIO = await productos.findByPk(id);
       res.json(UNUSUARIO);
     } catch (error) {
       return res.status(500).json({ message: error.message });
@@ -111,7 +107,7 @@ const TOTALPRODUCTOS = {
           [Op.or]: [
             { nombre_url: { [Op.like]: "%" + dato + "%" } },
             { nombre_prod: { [Op.like]: "%" + dato + "%" } },
-            { comentarios_prod: { [Op.like]: "%" + dato + "%" } }
+            { comentarios_prod: { [Op.like]: "%" + dato + "%" } },
           ],
         },
       });

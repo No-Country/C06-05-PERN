@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import ProductosAction from '../redux/actions/ProductosAction'
 import Spinner from './generales/Spinner'
 import {useParams} from 'react-router-dom'
-
+import Nosotros from './generales/Nosotros';
 const Products = () => {
   const {categoria} = useParams()
   const [reload, setReload] = useState(false)
@@ -34,11 +34,14 @@ const Products = () => {
     event.preventDefault()
     setSearch(event.target.value)
   }
+  if(categoria == "nosotros"){
+    return <Nosotros/>
+  }  
   return (
-    <div className='h-min w-full'>
+    <div className='h-min w-full  bg-[#f7f7f7] '>
       <div className='flex relative justify-center items-center w-full h-96 bg-center bg-cover' style={{ backgroundImage: `url(${Bkg})` }}>
         <form action="" className='w-6/12 relative flex justify-center items-center' onKeyUp={(event) => obtenerValor(event)}>
-          <input type="text" id="large-input" className="p-2.5 w-full bg-gray-50 rounded-2xl sm:text-md focus:ring-[#96BE8C]  focus:border-[#96BE8C]  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-[#96BE8C]  dark:focus:border-[#96BE8C]  font-semibold text-xl shadow-2xl " placeholder='Busca tu prenda favorita' />
+          <input type="text" id="large-input" className="p-2.5 w-full bg-[#f7f7f7] rounded-2xl sm:text-md focus:ring-[#96BE8C]  focus:border-[#96BE8C]  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-[#96BE8C]  dark:focus:border-[#96BE8C]  font-semibold text-xl shadow-2xl " placeholder='Busca tu prenda favorita' />
           <MdOutlineSearch className='absolute right-4 h-6 w-6 text-gray-400'/>
         </form>
       </div>

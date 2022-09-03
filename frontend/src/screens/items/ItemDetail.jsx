@@ -4,6 +4,9 @@ import { RadioGroup } from '@headlessui/react'
 import imagenGota from '../../assets/gota.png'
 import imagenDioxidoC from '../../assets/dioxido-de-carbono.png'
 import Spinner from '../generales/Spinner'
+import CarritoReducer from '../../redux/reducers/CarritoReducer'
+import { addOneProduc } from '../../redux/reducers/CarritoReducer'
+import { useDispatch, useSelector } from 'react-redux'
 function className(...className) {
   return className.filter(Boolean).join(' ')
 }
@@ -65,15 +68,16 @@ const product = {
 
 
 function ItemDetail({ product }) {
-  console.log(product)
-  /*   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-    const [selectedSize, setSelectedSize] = useState(product.sizes[2]) */
+  let dispatch = useDispatch()
+  const scremProduc = (oneID) => {
+    dispatch(addOneProduc(oneID));
+  }
   return (
-    <div className="bg-slate-400 py-20 ">
-      <div className="bg-white mx-auto px-20  rounded-2xl  max-w-[1407px] h-[879px] flex justify-between items-center box-border  ">
+    <div className="h-min w-full  bg-[#f7f7f7] ">
+      <div className="max-w-[1071px] min-h-[741px] p-10 border rounded-md transform -translate-y-40  bg-white flex flex-row  items-center justify-between mx-auto sm:flex-column md:flex-column flex-wrap">
 
         {/* text */}
-        <div className="w-1/2 p-5  ">
+        <div className="w-1/2 p-5">
           <h2 className="font-bold text-[40px] text-[#222] py-10">{product.nombre_prod}</h2>
           <h3 className="text-sm text-gray-900 font-medium">Descripción</h3>
           <p className='text-gray-400 text-sm'>{product.comentarios_prod}</p>
@@ -92,7 +96,7 @@ function ItemDetail({ product }) {
 
               <RadioGroup /* value={selectedSize} onChange={setSelectedSize} */ className="mt-4">
                 <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
-                <div className="grid grid-cols-4 gap-5 sm:grid-cols-8 lg:grid-cols-4">
+                <div className="flex flex-wrap gap-4">
                   {/* TALLES */}
 
                   {product.talle?.map((size, index) => (
@@ -188,7 +192,7 @@ function ItemDetail({ product }) {
               </div>
               <div className='flex justify-start' >
                 <img className='w-5 h-5 opacity-20' src={imagenDioxidoC} />
-                <p  className='text-gray-400 text-sm'>1.36 kg de emisiones de CO2 ahorrados</p>
+                <p className='text-gray-400 text-sm'>1.36 kg de emisiones de CO2 ahorrados</p>
               </div>
 
             </div>
@@ -198,6 +202,7 @@ function ItemDetail({ product }) {
             <button
               type="submit"
               className="mt-10 w-full bg-[#96BE8C] border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-[#77b469] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#77b469]"
+              onClick={() => scremProduc(product.id_productos)}
             >
               Add to bag
             </button>
@@ -206,7 +211,7 @@ function ItemDetail({ product }) {
 
         </div>
         {/* Image */}
-        <div className=" w-[607px]  h-[693px] rounded-2xl overflow-hidden ">
+        <div className=" w-6/12 h-[693px] rounded-2xl overflow-hidden ">
           <img
             src={process.env.PUBLIC_URL + '/imgs/' + product.imagen}
             alt="img"

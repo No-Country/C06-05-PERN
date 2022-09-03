@@ -18,15 +18,15 @@ const navigation = [
     url:"accesorios"
   },
   {
-    name:"¿Como comprar?",
-    url:"comocomprar"
+    name:"Nosotros",
+    url:"nosotros"
   }
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-export default function Example({ setIsShowCart, isShowCart }) {
+export default function Example() {
   return (
     <Disclosure as="nav" className="bg-transparent z-10 absolute w-full">
       {({ open }) => (
@@ -54,14 +54,14 @@ export default function Example({ setIsShowCart, isShowCart }) {
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <button
+                  <Link
                     type="button"
-                    className="flex justify-content items-center rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white z-10"
-                    onClick={() => setIsShowCart(true)}
+                    className="flex justify-content items-center rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 z-10"
+                    to="/cart"
                   >
                     {/* <span className="sr-only">View notifications</span> */}
                     <CartWidget className="h-6 w-6" aria-hidden="true" />
-                  </button>
+                  </Link>
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="ml-3 relative z-10">
@@ -85,36 +85,7 @@ export default function Example({ setIsShowCart, isShowCart }) {
                       leaveTo="transform opacity-0 scale-95"
                     >
                       <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 z-10')}
-                            >
-                              Your Profile
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                            >
-                              Settings
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                            >
-                              Sign out
-                            </a>
-                          )}
-                        </Menu.Item>
+                        <Link to={"/login"}>Login</Link>
                       </Menu.Items>
                     </Transition>
                   </Menu>
@@ -127,7 +98,7 @@ export default function Example({ setIsShowCart, isShowCart }) {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 z-10">
               {navigation.map((item, index) => (
-                <Disclosure.Button
+                <Link
                   key={index}
                   as="a"
                   href={item.href}
@@ -136,9 +107,9 @@ export default function Example({ setIsShowCart, isShowCart }) {
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
-                >
+                  to={item.url}>
                   {item.name}
-                </Disclosure.Button>
+                  </Link>
               ))}
             </div>
           </Disclosure.Panel>

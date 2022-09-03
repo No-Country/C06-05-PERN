@@ -200,7 +200,6 @@ const USUARIOSTOTALES = {
     verifyToken: (req, res) => {
 
         if (!req.err) {
-
             res.json({
                 success: true,
                 response: {

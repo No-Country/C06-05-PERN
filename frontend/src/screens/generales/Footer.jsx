@@ -17,18 +17,18 @@ function Footer() {
         
         <div className="grid grid-cols-1 gap-8 mt-16 lg:grid-cols-2 lg:gap-32">
             <div className="max-w-sm mx-auto lg:max-w-none">
-            <p className="text-black text-2xl font-bold uppercase">
+            <p className="text-white text-2xl font-bold uppercase">
             Remecycle
             </p>
         
-            <p className="mt-4 text-center text-black lg:text-left lg:text-lg">
+            <p className="mt-4 text-center text-white lg:text-left lg:text-lg">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
                 natus quod eveniet aut perferendis distinctio iusto repudiandae,
                 provident velit earum?
             </p>
         
             <div
-                className="flex justify-center gap-4 mt-6 text-gray-300 lg:justify-start"
+                className="flex justify-center gap-4 mt-6 text-white lg:justify-start"
             >
                 <a
                 className="transition hover:opacity-75"
@@ -140,11 +140,11 @@ function Footer() {
             className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left"
             >
             <div>
-                <strong className="text-sm font-bold tracking-wide text-black uppercase">
+                <strong className="text-sm font-bold tracking-wide text-white uppercase">
                 Services
                 </strong>
         
-                <nav className="flex flex-col mt-6 space-y-1 text-gray-600">
+                <nav className="flex flex-col mt-6 space-y-1 text-white">
                 <a className="transition hover:text-white" href="/"> Marketing </a>
                 <a className="transition hover:text-white" href="/"> Graphic Design </a>
                 <a className="transition hover:text-white" href="/">
@@ -157,11 +157,11 @@ function Footer() {
             </div>
         
             <div>
-                <strong className="text-sm font-bold tracking-wide text-black uppercase">
+                <strong className="text-sm font-bold tracking-wide text-white uppercase">
                 About
                 </strong>
         
-                <nav className="flex flex-col mt-6 space-y-1 text-gray-600">
+                <nav className="flex flex-col mt-6 space-y-1 text-white">
                 <a className="transition hover:text-white" href="/"> About </a>
                 <a className="transition hover:text-white" href="/"> Careers </a>
                 <a className="transition hover:text-white" href="/"> History </a>
@@ -170,11 +170,11 @@ function Footer() {
             </div>
         
             <div>
-                <strong className="text-sm font-bold tracking-wide text-black uppercase">
+                <strong className="text-sm font-bold tracking-wide text-white uppercase">
                 Support
                 </strong>
         
-                <nav className="flex flex-col mt-6 space-y-1 text-gray-600">
+                <nav className="flex flex-col mt-6 space-y-1 text-white">
                 <a className="transition hover:text-white" href="/"> FAQs </a>
                 <a className="transition hover:text-white" href="/"> Contact </a>
                 <a className="transition hover:text-white" href="/"> Live Chat </a>
@@ -184,7 +184,7 @@ function Footer() {
         </div>
         
         <div className="pt-8 mt-16 border-t border-white/10">
-            <p className="text-xs leading-relaxed text-center text-gray-600">
+            <p className="text-xs leading-relaxed text-center text-white">
             © Company 2022. All rights reserved.
             <br />
             Created with  

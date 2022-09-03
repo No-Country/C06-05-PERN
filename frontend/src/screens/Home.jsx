@@ -16,11 +16,10 @@ export default function Example() {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
             <div className="sm:max-w-lg">
               <h1 className="text-4xl font font-bold tracking-tight text-white sm:tracking-tight sm:text-6xl">
-                Summer styles are finally here
+              Sumate a esta nueva aventura ecologica
               </h1>
-              <p className="mt-4 text-xl text-gray-200">
-                This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care
-                if you live or die.
+              <p className="mt-4 text-l text-white w-96">
+              Este año, nuestra nueva colección de verano te protegerá de los duros elementos de un mundo al que no le importa si vives o mueres.
               </p>
             </div>
             <div>
@@ -96,7 +95,7 @@ export default function Example() {
                   className="bg-[#629460] inline-block text-center  border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-[#71ac6f] transition ease-in-out "
                   onClick={() => goToProducts()}
                 >
-                  Shop Collection
+                  Ver productos
                 </Link>
               </div>
             </div>
